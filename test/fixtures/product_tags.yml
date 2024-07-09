@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  product: one
+  tag: one
+  created_at: 2024-07-02 18:13:11
+  updated_at: 2024-07-02 18:13:11
+
+two:
+  product: two
+  tag: two
+  created_at: 2024-07-02 18:13:11
+  updated_at: 2024-07-02 18:13:11

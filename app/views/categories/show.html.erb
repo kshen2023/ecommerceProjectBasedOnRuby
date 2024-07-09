@@ -1,0 +1,9 @@
+<!-- app/views/categories/show.html.erb -->
+<h1><%= @category.name %></h1>
+<p><%= @category.description %></p>
+<h2>Products</h2>
+<ul>
+  <% @products.each do |product| %>
+    <li><%= link_to product.name, category_product_path(@category, product) %></li>
+  <% end %>
+</ul>

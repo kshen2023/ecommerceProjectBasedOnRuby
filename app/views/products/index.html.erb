@@ -1,0 +1,7 @@
+<!-- app/views/products/index.html.erb -->
+<h1>Products in <%= @category.name %></h1>
+<ul>
+  <% @products.each do |product| %>
+    <li><%= link_to product.name, category_product_path(@category, product) %></li>
+  <% end %>
+</ul>
