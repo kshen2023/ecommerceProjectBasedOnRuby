@@ -1,9 +1,14 @@
 <!-- app/views/categories/show.html.erb -->
-<h1><%= @category.name %></h1>
+<h1><%= @category.name %> (<%= @category.sub_category %>)</h1>
 <p><%= @category.description %></p>
 <h2>Products</h2>
 <ul>
   <% @products.each do |product| %>
-    <li><%= link_to product.name, category_product_path(@category, product) %></li>
+    <li>
+      <%= link_to product.name, category_product_path(@category, product) %>
+      <p>Price: <%= number_to_currency(product.price) %></p>
+      <p>Description: <%= product.description %></p>
+      <img src="<%= product.img_src %>" alt="<%= product.name %>">
+    </li>
   <% end %>
 </ul>

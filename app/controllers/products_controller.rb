@@ -1,12 +1,18 @@
 # app/controllers/products_controller.rb
+
 class ProductsController < ApplicationController
+  before_action :find_category
+
   def index
-    @category = Category.find(params[:category_id])
     @products = @category.products
   end
 
-  def show
+  private
+
+  def find_category
     @category = Category.find(params[:category_id])
-    @product = @category.products.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    flash[:error] = "Category not found."
+    redirect_to categories_path
   end
 end

@@ -10,21 +10,20 @@
 # AdminUser.create!(email: 'kshen@rrc.ca', password: '111', password_confirmation: '111') if Rails.env.development?
 require 'csv'
 
-# Seed categories
-CSV.foreach(Rails.root.join('db/seeds/category.csv'), headers: true) do |row|
-  Category.create!(
-    name: row['name'],
-    description: row['description']
+CSV.foreach(Rails.root.join('db/seeds/NIKE.csv'), headers: true) do |row|
+  category = Category.find_or_create_by!(
+    name: row['category'],
+    sub_category: row['sub-category'],
+    sub_category_href: row['sub-category-href']
   )
-end
 
-# Seed products
-CSV.foreach(Rails.root.join('db/seeds/product.csv'), headers: true) do |row|
-  category = Category.find_by(name: row['category'])
   Product.create!(
     name: row['name'],
     description: row['description'],
     price: row['price'],
+    product_link: row['product-link'],
+    product_link_href: row['product-link-href'],
+    img_src: row['img-src'],
     category: category
   )
 end

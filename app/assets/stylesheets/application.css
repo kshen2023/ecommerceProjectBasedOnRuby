@@ -13,3 +13,32 @@
  *= require_tree .
  *= require_self
  */
+/* app/assets/stylesheets/application.scss */
+
+.card {
+    border: 1px solid #dee2e6;
+    /* Adjust border color and thickness */
+    border-radius: 0.25rem;
+    /* Rounded corners */
+    transition: box-shadow 0.3s ease;
+    /* Smooth shadow transition */
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Shadow on hover */
+}
+
+.card-link {
+    text-decoration: none;
+    /* Remove underline from links */
+    color: inherit;
+    /* Inherit text color */
+}
+
+.card-img-top {
+    height: 200px;
+    /* Set image height */
+    object-fit: cover;
+    /* Scale image as needed */
+}

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_09_021714) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_09_184143) do
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
@@ -42,6 +42,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_09_021714) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "sub_category"
+    t.string "sub_category_href"
   end
 
   create_table "customers", force: :cascade do |t|
@@ -106,6 +108,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_09_021714) do
     t.integer "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "product_link"
+    t.string "product_link_href"
+    t.string "img_src"
     t.index ["category_id"], name: "index_products_on_category_id"
   end
 
