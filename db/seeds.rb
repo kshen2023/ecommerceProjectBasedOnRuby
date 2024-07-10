@@ -9,6 +9,8 @@
 #   end
 # AdminUser.create!(email: 'kshen@rrc.ca', password: '111', password_confirmation: '111') if Rails.env.development?
 require 'csv'
+StaticPage.create(title: "About", content: "This is the about page content.")
+StaticPage.create(title: "Contact", content: "This is the contact page content.")
 
 CSV.foreach(Rails.root.join('db/seeds/NIKE.csv'), headers: true) do |row|
   category = Category.find_or_create_by!(

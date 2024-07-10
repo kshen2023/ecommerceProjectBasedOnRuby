@@ -53,17 +53,22 @@
           <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
             <h5 class="text-uppercase">Links</h5>
             <ul class="list-unstyled mb-0">
-              <li>
-                <a href="/" class="text-dark">Home</a>
-              </li>
-              <li>
-                <a href="/about" class="text-dark">About</a>
-              </li>
-              <li>
-                <a href="/contact" class="text-dark">Contact</a>
-              </li>
+              <li class="nav-item">
+    <li class="nav-item">
+    <%= link_to "Home", root_path, class: "nav-link" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to "About", about_path, class: "nav-link" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to "Contact", contact_path, class: "nav-link" %>
+  </li>
+
                 <li><%= link_to "Categories", categories_path, class: "text-blue-500 hover:text-blue-700" %></li>
                 <li><%= link_to "Products", products_path, class: "text-blue-500 hover:text-blue-700" %></li>
+                 <li class="nav-item">
+          <%= link_to "Admin", admin_root_path, class: "nav-link" %>
+        </li>
             </ul>
           </div>
 
